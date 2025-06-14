@@ -101,15 +101,7 @@ public class TicTacToe {
                             tile.setText(currentPlayer);
                             turns++;
                             checkWinner();
-                            if(gameOver) {
-                                if (currentPlayer.equals(playerX)) {
-                                    scoreX++;
-                                } else {
-                                    scoreO++;
-                                }
-                                scoreLabel.setText(getScoreText());
-                            }
-                            else {
+                            if(!gameOver) {
                                 currentPlayer = currentPlayer == playerX ? playerO : playerX;
                                 textLabel.setText(currentPlayer + "'s turn");
                             }
@@ -131,6 +123,7 @@ public class TicTacToe {
                 for (int i = 0; i < 3; i++) {
                     setWinner(board[r][i]);
                 }
+                updateScore();
                 gameOver = true;
                 return;
             }
@@ -145,6 +138,7 @@ public class TicTacToe {
                 for (int i = 0; i < 3; i++) {
                     setWinner(board[i][c]);
                 }
+                updateScore();
                 gameOver = true;
                 return;
             }
@@ -157,6 +151,7 @@ public class TicTacToe {
             for (int i = 0; i < 3; i++) {
                 setWinner(board[i][i]);
             }
+            updateScore();
             gameOver = true;
             return;
         }
@@ -168,6 +163,7 @@ public class TicTacToe {
             setWinner(board[0][2]);
             setWinner(board[1][1]);
             setWinner(board[2][0]);
+            updateScore();
             gameOver = true;
             return;
         }
@@ -186,6 +182,15 @@ public class TicTacToe {
         tile.setForeground(Color.green);
         tile.setBackground(Color.gray);
         textLabel.setText(currentPlayer + " is the winner!");
+    }
+
+    void updateScore() {
+        if (currentPlayer == playerX) {
+            scoreX++;
+        } else {
+            scoreO++;
+        }
+        scoreLabel.setText(getScoreText());
     }
 
     void setTie(JButton tile) {
@@ -219,7 +224,7 @@ public class TicTacToe {
         currentPlayer = playerX;
         gameOver = false;
         turns = 0;
-        textLabel.setText("Tic-Tac-Toe");
+        textLabel.setText("X's turn");
         scoreX = 0;
         scoreO = 0;
         scoreLabel.setText(getScoreText());
