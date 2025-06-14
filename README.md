@@ -43,4 +43,4 @@ A simple 2-player **Tic-Tac-Toe** desktop application built using **Java Swing**
 ---
 ![image](https://github.com/user-attachments/assets/aed31486-3d8f-47d4-b740-099ce8add256)
 ![image](https://github.com/user-attachments/assets/46c5eddf-6f1f-4597-871c-d3e80eebf8e0)
-![image](https://github.com/user-attachments/assets/458a6e55-8d98-416b-843e-f29ec2bfb91b)
+![image](https://github.com/user-attachments/assets/f8d3cc76-b23a-4672-b7ab-645303095e89)
